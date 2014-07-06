@@ -4,8 +4,8 @@ module.exports = function(grunt) {
     pkg: grunt.file.readJSON('package.json'),
     concat: {
       dist: {
-        src: ['/public/client/*.js'],
-        dest: '/public/lib/all.js'
+        src: ['public/client/*.js'],
+        dest: 'public/lib/all.js'
       }
     },
 
@@ -26,14 +26,14 @@ module.exports = function(grunt) {
 
     uglify: {
       dist: {
-        src:['/public/lib/all.js'],
-        dest: '/public/lib/all.min.js'
+        src:['public/lib/all.js'],
+        dest: 'public/lib/all.min.js'
       }
     },
 
     jshint: {
       files: {
-        src: ['/public/client/*.js']
+        src: ['public/client/*.js']
       },
       options: {
         force: 'true',
@@ -47,8 +47,8 @@ module.exports = function(grunt) {
 
     cssmin: {
       css: {
-        src: '/public/style.css',
-        dest: '/public/style.min.css'
+        src: 'public/style.css',
+        dest: 'public/style.min.css'
       }
     },
 
