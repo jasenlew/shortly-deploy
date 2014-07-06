@@ -5,7 +5,7 @@ module.exports = function(grunt) {
     concat: {
       dist: {
         src: ['/public/client/*.js'],
-        dest: '/public/dist/all.js'
+        dest: '/public/lib/all.js'
       }
     },
 
@@ -25,12 +25,16 @@ module.exports = function(grunt) {
     },
 
     uglify: {
+      dist: {
+        src:['/public/lib/all.js'],
+        dest: '/public/lib/all.min.js'
+      }
     },
 
     jshint: {
-      files: [
-        // Add filespec list here
-      ],
+      files: {
+        src: ['/public/client/*.js']
+      },
       options: {
         force: 'true',
         jshintrc: '.jshintrc',
@@ -42,6 +46,10 @@ module.exports = function(grunt) {
     },
 
     cssmin: {
+      css: {
+        src: '/public/style.css',
+        dest: '/public/style.min.css'
+      }
     },
 
     watch: {
@@ -108,9 +116,7 @@ module.exports = function(grunt) {
     }
   });
 
-  grunt.registerTask('deploy', [
-    // add your deploy tasks here
-  ]);
+  grunt.registerTask('deploy', ['concat', 'uglify']);
 
 
 };
