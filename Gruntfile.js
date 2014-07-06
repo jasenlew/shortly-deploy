@@ -116,7 +116,5 @@ module.exports = function(grunt) {
     }
   });
 
-  grunt.registerTask('deploy', ['concat', 'uglify']);
-
-
+  grunt.registerTask('deploy', ['concat', 'uglify', 'cssmin']);
 };
